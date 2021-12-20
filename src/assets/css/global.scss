@@ -1,0 +1,149 @@
+// 自定义文件上传
+._upload_file {
+    width: 100%;
+    height: 30px;
+    border-radius: 8px;
+    border: 1px dashed #8e7b7b;
+    display: inline-block;
+    line-height: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-size: 18px;
+    font-family: SourceHanSansCN-Normal, SourceHanSansCN;
+    font-weight: 400;
+    color: rgba(126, 126, 126, 0.62);
+    ._icon {
+    }
+    ._upload_file_input {
+      position: absolute;
+      width: 100%;
+      opacity: 0;
+      height: 30px;
+      left: 0;
+      cursor: pointer;
+    }
+    ._relative_span {
+      margin-left: 6px;
+      font-size: 14px;
+      font-family: SourceHanSansCN-Normal, SourceHanSansCN;
+      font-weight: 400;
+      color: rgba(126, 126, 126, 0.62);
+    }
+  }
+
+  .el-form-item__content{
+    text-align: left;
+  }
+
+  // 单行溢出显示省略号
+._one_omit {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  //多行溢出省略号
+  ._more_omit {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+  }
+  
+  // 隐藏滚动条但可滚动
+  ._hideScrollbar {
+    overflow-y: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    &::-webkit-scrollbar {
+      /* WebKit */
+      width: 0;
+      height: 0;
+    }
+  }
+
+  .el-loading-mask{
+    width: 100vw;
+    height: 100vh;    z-index: 2013 !important;
+  }
+
+.add_blog_dialog{
+  background: #FFFFFF;
+  border-radius: 15px !important;
+  height: 764px;
+  .el-dialog__body{
+    padding: 30px 40px;
+  }
+  ._tit{
+
+    .el-textarea__inner{
+height: 52px;
+    }
+  }
+  .el-dialog__header{
+    padding: 0;
+  }
+  .el-textarea__inner{
+    background: #EFEFEF;
+    border-radius: 11px;
+    font-size: 20px;
+    font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+    font-weight: 500;
+    color: #444444;
+    line-height: 30px;
+  }
+  
+}
+.el-loading-mask{
+  z-index: 2001;
+}
+
+._blogInfo ._discuss ._block_inp 
+{
+  .el-input__inner{
+    height: 64px;
+      background: #EFEFEF;
+      border-radius: 14px;
+  }
+  ._btn{
+    .el-button{
+      width: inherit;
+      height: inherit;
+      font-size: 20px;    border-radius: 8px;
+font-family: SourceHanSansCN-Medium, SourceHanSansCN;
+font-weight: 500;
+color: #FFFFFF;
+    }
+  }
+  
+}
+
+._card{
+  .el-input,.el-input__inner{
+    width: inherit;
+    height: inherit;
+    background: inherit;
+   
+  }
+  .el-input__inner{
+    background: #efefef;border-radius: 11px;
+  }
+}
+
+.el-loading-mask {
+  z-index: 2005 !important ;
+  cursor: no-drop;
+  position: fixed !important;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  .el-loading-spinner{
+    // background-image: url($logon_base);
+    // background-repeat: no-repeat;
+    // background-size: 300px 234px;
+    // height: 100%;
+    // width: 100%;
+    // background-position: center;
+    // top: 0%;
+  }
+}
