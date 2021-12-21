@@ -1,6 +1,6 @@
 exports.APIURL = {
-    appCode:'',
-    baseUrl:'',
-    chainId:'',
-    DBchainType:'sm2'
-}
+  appCode: "",
+  baseUrl: "",
+  chainId: "",
+  DBchainType: "sm2",
+};

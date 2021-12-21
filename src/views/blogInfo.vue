@@ -16,7 +16,8 @@
         <div class="_flex">
           <div class="_user">
             <img
-            v-real-img="$APIURL.BaseUrl + '/ipfs/' + item.userInfo.photo" :default-img="$img.default_img"
+              v-real-img="$APIURL.BaseUrl + '/ipfs/' + item.userInfo.photo"
+              :default-img="$img.default_img"
               :src="$APIURL.BaseUrl + '/ipfs/' + item.userInfo.photo"
               alt=""
               srcset=""
@@ -36,7 +37,8 @@
         >
           <div class="_user">
             <img
-            v-real-img="$APIURL.BaseUrl + '/ipfs/' + item.userInfo.photo" :default-img="$img.default_img"
+              v-real-img="$APIURL.BaseUrl + '/ipfs/' + item.userInfo.photo"
+              :default-img="$img.default_img"
               :src="$APIURL.BaseUrl + '/ipfs/' + r_item.userInfo.photo"
               alt=""
               srcset=""
@@ -82,10 +84,8 @@ export default {
   methods: {
     async getBlogInfo() {
       // 按条件查询
-
-   
     },
-    
+
     // 回复
     replay(messageId) {
       //回复留言功能
@@ -112,9 +112,7 @@ export default {
       //   });
     },
     // 评论
-    submit() {
-     
-    },
+    submit() {},
   },
   computed: {
     appCode() {
@@ -127,7 +125,7 @@ export default {
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 ._blogInfo {
   width: 1360px;
   min-width: 1360px;

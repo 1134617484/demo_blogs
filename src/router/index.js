@@ -11,7 +11,8 @@ const routes = [
   {
     path: "/login",
     name: "login",
-    component: () =>import(/* webpackChunkName: "login" */ "@/components/login/login.vue"),
+    component: () =>
+      import(/* webpackChunkName: "login" */ "@/components/login/login.vue"),
   },
   {
     path: "/blogs",
@@ -40,11 +41,9 @@ const routes = [
   {
     name: "refresh",
     path: `/refresh`,
-    component: () => import('@/views/errPage/refresh') 
+    component: () => import("@/views/errPage/refresh"),
     // 目录更改为你自己的refresh.vue的目录
-  }
-
-  
+  },
 ];
 
 const router = new VueRouter({

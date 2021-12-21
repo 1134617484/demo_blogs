@@ -13,7 +13,7 @@ export default new Vuex.Store({
     // 查询搜索loding
     getIsLoding: (state) => state.isLoding,
     getIsUser: (state) => state.isUser,
-    getIsMask: (state) => state.isMask
+    getIsMask: (state) => state.isMask,
   },
   mutations: {
     // 设置loding
@@ -24,11 +24,9 @@ export default new Vuex.Store({
       state.isUser = isUser;
     },
     setIsMask(state, isMask = false) {
-      state.isMask = isMask
-    }
+      state.isMask = isMask;
+    },
   },
-  actions: {
-
-  },
+  actions: {},
   modules: {},
 });

@@ -1,5 +1,5 @@
 <template>
-  <div id="app" v-loading="isLogin" :class="isMask?'isMask':''">
+  <div id="app" v-loading="isLogin" :class="isMask ? 'isMask' : ''">
     <div class="_header">
       <blog_header />
     </div>
@@ -11,7 +11,7 @@ import header from "@/components/header.vue";
 export default {
   data() {
     return {
-      Mask:''
+      Mask: "",
     };
   },
   components: {
@@ -21,26 +21,26 @@ export default {
     isLogin() {
       return this.$store.getters.getIsLoding;
     },
-    isMask(){
+    isMask() {
       return this.$store.getters.getIsMask;
-    }
+    },
   },
-  watch:{
-    isMask(val){
-      if(!val){
-        return this.Mask.close()
+  watch: {
+    isMask(val) {
+      if (!val) {
+        return this.Mask.close();
       }
-      this.Mask=this.$loading({
-          lock: true,
-          text: '',
-          spinner: '.xx',
-          background: 'rgba(0, 0, 0, 0.7)'
-        });
-    }
-  }
+      this.Mask = this.$loading({
+        lock: true,
+        text: "",
+        spinner: ".xx",
+        background: "rgba(0, 0, 0, 0.7)",
+      });
+    },
+  },
 };
 </script>
-<style  lang="scss" src='@/assets/css/global.scss'></style>
+<style lang="scss" src="@/assets/css/global.scss"></style>
 <style lang="scss">
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;

@@ -1,5 +1,5 @@
 <template>
-<!-- 用户信息修改页 -->
+  <!-- 用户信息修改页 -->
   <div class="_user">
     <el-form ref="form" :model="form" label-width="80px">
       <el-form-item label="姓名">
@@ -16,9 +16,13 @@
         <el-input v-model="form.age"></el-input>
       </el-form-item>
       <el-form-item label="头像">
-          <div class="_photo" >
-              <img v-if="photo" :src="$APIURL.BaseUrl+'/ipfs/'+form.photo" alt="">
-          </div>
+        <div class="_photo">
+          <img
+            v-if="photo"
+            :src="$APIURL.BaseUrl + '/ipfs/' + form.photo"
+            alt=""
+          />
+        </div>
         <span class="_inp _block_add_inp">
           <span class="_upload_file">
             <!-- <span class="_icon">
@@ -41,20 +45,19 @@
   </div>
 </template>
 
-
 <script>
 import {
   Querier,
   insertRow,
   canInsertRow,
   getAddress,
-  uploadFile
+  uploadFile,
 } from "dbchain-js-client-sm2";
 let that;
 export default {
   data() {
     return {
-        photo:'',
+      photo: "",
       form: {
         name: "",
         age: "",
@@ -72,16 +75,19 @@ export default {
     async getuserInfo() {
       let key = getAddress();
       //console.log(key);
-      let userinf = await Querier(this.appCode).table('user').equal("dbchain_key", key).val();
+      let userinf = await Querier(this.appCode)
+        .table("user")
+        .equal("dbchain_key", key)
+        .val();
       userinf.reverse();
       //console.log(userinf);
-      this.form=userinf[0]?userinf[0]:this.form;
-      this.form.photo?this.photo=this.form.photo:'';
-      this.form.dbchain_key=key
+      this.form = userinf[0] ? userinf[0] : this.form;
+      this.form.photo ? (this.photo = this.form.photo) : "";
+      this.form.dbchain_key = key;
     },
     onSubmit() {
       //console.log("submit!");
-      this.exInsertRow(this.form,'user','修改个人信息成功')
+      this.exInsertRow(this.form, "user", "修改个人信息成功");
     },
     // file类型需上传文件
     uploadFile(e) {
@@ -89,11 +95,10 @@ export default {
       let file = e.target.files[0];
       uploadFile(file).then((res) => {
         //console.log(res);
-        that.form.photo=res;
-        that.photo=that.form.photo
+        that.form.photo = res;
+        that.photo = that.form.photo;
       });
     },
-   
   },
   computed: {
     appCode() {
@@ -103,16 +108,16 @@ export default {
 };
 </script>
 
-<style scoped lang='scss'>
-._user{
-    width: 1200px;
-    margin: 0 auto;
-    padding-top: 50px;
-    ._photo{
-        img{
-            width: 80px;
-            height: 80px;
-        }
+<style scoped lang="scss">
+._user {
+  width: 1200px;
+  margin: 0 auto;
+  padding-top: 50px;
+  ._photo {
+    img {
+      width: 80px;
+      height: 80px;
     }
+  }
 }
 </style>

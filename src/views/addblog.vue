@@ -1,5 +1,5 @@
 <template>
-<!-- 添加博客页面 -->
+  <!-- 添加博客页面 -->
   <div class="_add_blog">
     <div class="_header">
       <div class="_left">标题</div>
@@ -29,7 +29,6 @@
       >
       </el-input>
     </div>
-
   </div>
 </template>
 
@@ -43,69 +42,67 @@ export default {
       body: "",
     };
   },
-  created(){
-      that=this
+  created() {
+    that = this;
   },
-  methods:{
-     
-
-    closeBlog(){
-      this.$emit('closeBlog',false)
-    }
-
+  methods: {
+    closeBlog() {
+      this.$emit("closeBlog", false);
+    },
   },
-  computed:{
-      appCode(){
-        return this.$APIURL.AppCode
-      }
-  }
+  computed: {
+    appCode() {
+      return this.$APIURL.AppCode;
+    },
+  },
 };
 </script>
 
-<style lang='scss' scoped>
+<style lang="scss" scoped>
 ._add_blog {
   margin: 0 auto;
-._header{
-  display: flex;
-  justify-content: space-between;
-  padding-bottom: 14px;
-  ._left{
-font-size: 28px;
-font-family: SourceHanSansCN-Bold, SourceHanSansCN;
-font-weight: bold;
-color: #444444;
-line-height: 42px;
-  }
-  ._right{
+  ._header {
     display: flex;
-    ._txt{
-font-size: 28px;
-font-family: SourceHanSansCN-Regular, SourceHanSansCN;
-font-weight: 400;
-color: #9E9E9E;
-line-height: 42px;
-cursor: pointer;
+    justify-content: space-between;
+    padding-bottom: 14px;
+    ._left {
+      font-size: 28px;
+      font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+      font-weight: bold;
+      color: #444444;
+      line-height: 42px;
     }
-    ._txt.btn{
-font-size: 28px;
-font-family: SourceHanSansCN-Bold, SourceHanSansCN;
-font-weight: bold;
-color: #444444;
-line-height: 42px;
-margin-left: 49px;
+    ._right {
+      display: flex;
+      ._txt {
+        font-size: 28px;
+        font-family: SourceHanSansCN-Regular, SourceHanSansCN;
+        font-weight: 400;
+        color: #9e9e9e;
+        line-height: 42px;
+        cursor: pointer;
+      }
+      ._txt.btn {
+        font-size: 28px;
+        font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+        font-weight: bold;
+        color: #444444;
+        line-height: 42px;
+        margin-left: 49px;
+      }
     }
   }
-}
-._tit{text-align: left;
-  ._txt{
-    height: 28px;
-font-size: 28px;
-font-family: SourceHanSansCN-Bold, SourceHanSansCN;
-font-weight: bold;
-color: #444444;
-line-height: 42px;
+  ._tit {
+    text-align: left;
+    ._txt {
+      height: 28px;
+      font-size: 28px;
+      font-family: SourceHanSansCN-Bold, SourceHanSansCN;
+      font-weight: bold;
+      color: #444444;
+      line-height: 42px;
+    }
   }
-}
   ._tit,
   ._body {
   }

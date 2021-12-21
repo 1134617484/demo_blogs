@@ -21,16 +21,14 @@
             </el-option>
           </el-select> -->
           <el-input
-                class="input-new-tag"
-                v-model="ruleForm.mnemonic"
-     
-                placeholder="请输入助记词"
-                size="small"
-                type="textarea"
-                :autosize="true"
-                :rows="4"
-
-              ></el-input>
+            class="input-new-tag"
+            v-model="ruleForm.mnemonic"
+            placeholder="请输入助记词"
+            size="small"
+            type="textarea"
+            :autosize="true"
+            :rows="4"
+          ></el-input>
         </div>
         <div class="_btn" @click="submitForm('ruleForm')">立即进入</div>
       </div>
@@ -57,7 +55,7 @@ import {
   detectChain,
   resetLazyFactory,
 } from "dbchain-js-client-sm2";
-import {getVerToken} from '@/custom/rest_client'
+import { getVerToken } from "@/custom/rest_client";
 export default {
   data() {
     return {
@@ -68,7 +66,6 @@ export default {
           "bind dizzy trigger story senior session finger analyst text traffic scheme parent",
         password: "123456",
       },
-
     };
   },
   created() {
@@ -88,15 +85,15 @@ export default {
       // 访回值如下 {status:false,content:'当前访参无法访问，请检查'}
       // 若不可设置，则应检查您提供的参数是否正确或网络是否存在问题
       // 此函数如非异步调用，则会返回promise，请检查需要异步调用时则需异步，否则使用中容易出错
-      console.log(this)
-      console.log(this.$APIURL)
+      console.log(this);
+      console.log(this.$APIURL);
       let isToBaseUrl = await detectChain(
         this.$APIURL.BaseUrl,
         this.$APIURL.ChainId
       );
       //console.log(isToBaseUrl);
       if (!isToBaseUrl.status) return this.$message.error(isToBaseUrl.content);
-      getVerToken()
+      getVerToken();
       // 设置默认访问参数 节点访问地址和节点id
       setBaseUrl(this.$APIURL.BaseUrl);
       setChainId(this.$APIURL.ChainId);
@@ -112,7 +109,7 @@ export default {
         this.$store.commit("setIsLoding", false);
         return this.$message.error("助记词有误，请检查");
       }
-      
+
       // 此处生成对应私钥
       let iskey = await this.createKey();
       //console.log(iskey);
@@ -185,9 +182,9 @@ export default {
       }
       ._cont {
         padding: 28.5px 0;
-            font-size: 18px;
-    color: #2e44ff;
-    font-weight: bolder;
+        font-size: 18px;
+        color: #2e44ff;
+        font-weight: bolder;
       }
       ._btn {
         width: 300px;

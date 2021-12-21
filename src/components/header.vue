@@ -3,11 +3,16 @@
     <div class="_left _local" @click="$router.push('/blogs')">
       <img src="@/assets/img/logo.png" alt="" srcset="" />
     </div>
-    <div class="_right"  v-if="!islogin">
+    <div class="_right" v-if="!islogin">
       <span class="_name" @click="openCard()">{{ name }}</span>
-      <div class="_img" @click="openCard()"> 
-        <img :src="getUserImg()" alt="" srcset="" 
-        v-real-img="$APIURL.BaseUrl + '/ipfs/' + photo" :default-img="$img.default_img"/>
+      <div class="_img" @click="openCard()">
+        <img
+          :src="getUserImg()"
+          alt=""
+          srcset=""
+          v-real-img="$APIURL.BaseUrl + '/ipfs/' + photo"
+          :default-img="$img.default_img"
+        />
       </div>
 
       <div class="_card" v-show="showUserCard">
@@ -40,9 +45,13 @@
 
         <div class="_card_cont">
           <div class="_card_userImg" @click.stop="openUploadFile">
-            <img :src="getUserImg()" alt="" srcset="" 
-            v-real-img="$APIURL.BaseUrl + '/ipfs/' + photo" :default-img="$img.default_img"
-           />
+            <img
+              :src="getUserImg()"
+              alt=""
+              srcset=""
+              v-real-img="$APIURL.BaseUrl + '/ipfs/' + photo"
+              :default-img="$img.default_img"
+            />
           </div>
           <input
             ref="uploadFile"
@@ -90,7 +99,7 @@ export default {
       photo: "",
       sex: "",
       showUserCard: false,
-      islogin:false
+      islogin: false,
     };
   },
   created() {
@@ -131,11 +140,11 @@ export default {
       //console.log("submit!");
       this.exInsertRow(
         {
-          name: this.name+'',
-          age: this.age+'',
-          photo: this.photo+'',
-          sex: this.sex+'',
-          dbchain_key: getAddress()
+          name: this.name + "",
+          age: this.age + "",
+          photo: this.photo + "",
+          sex: this.sex + "",
+          dbchain_key: getAddress(),
         },
         "user",
         "修改个人信息成功"
@@ -178,11 +187,11 @@ export default {
       });
     },
 
-    outLogin(){
-      this.closeCard()
-      window.localStorage.removeItem('dbchainwallet')
-      this.$router.push('/login')
-    }
+    outLogin() {
+      this.closeCard();
+      window.localStorage.removeItem("dbchainwallet");
+      this.$router.push("/login");
+    },
   },
   computed: {
     isUser() {
@@ -198,11 +207,11 @@ export default {
       this.getUserInfo();
     },
     $route(val) {
-      console.log(val)
-      if(val.path=='/login'){
-        this.islogin=true
-      }else{
-        this.islogin=false
+      console.log(val);
+      if (val.path == "/login") {
+        this.islogin = true;
+      } else {
+        this.islogin = false;
       }
     },
   },

@@ -17,7 +17,9 @@
     </div>
     <div class="_search">
       <div class="group2 flex-row">
-        <span class="_active _text" @click="$router.replace('/refresh')">POPULAR</span>
+        <span class="_active _text" @click="$router.replace('/refresh')"
+          >POPULAR</span
+        >
         <span class="_text" @click="$router.replace('/refresh')">最新</span>
         <span class="_text" @click="$router.replace('/refresh')">评价最多</span>
         <div class="layer1 flex-col"><div class="block1 flex-col"></div></div>
@@ -108,16 +110,14 @@ export default {
         return this.$router.push("/login");
       }
     },
-    reloadList(){
+    reloadList() {
       this.isAddBlog = false;
-      this.$router.replace('/refresh')
+      this.$router.replace("/refresh");
     },
     closeBlog(val) {
       this.isAddBlog = false;
     },
-    getData() {
-
-    },
+    getData() {},
   },
 
   components: {
@@ -130,7 +130,7 @@ export default {
   },
 };
 </script>
-<style scoped lang='scss'>
+<style scoped lang="scss">
 ._blog_list {
   width: 1360px;
   margin: 0 auto;
