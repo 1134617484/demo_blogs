@@ -147,3 +147,11 @@ color: #FFFFFF;
     // top: 0%;
   }
 }
+
+.el-textarea{
+  font-size: inherit !important;
+  color: inherit !important;
+  .el-textarea__inner{
+    color: inherit !important;
+  }
+}

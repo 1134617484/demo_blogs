@@ -28,7 +28,8 @@
                 size="small"
                 type="textarea"
                 :autosize="true"
-              
+                :rows="4"
+
               ></el-input>
         </div>
         <div class="_btn" @click="submitForm('ruleForm')">立即进入</div>
@@ -165,8 +166,8 @@ export default {
       }
     }
     ._box_card {
-      width: 200px;
-      height: 275px;
+      width: 300px;
+      height: 375px;
       background: #ffffff;
       border-radius: 15px;
       padding: 40px 50px;
@@ -184,9 +185,12 @@ export default {
       }
       ._cont {
         padding: 28.5px 0;
+            font-size: 18px;
+    color: #2e44ff;
+    font-weight: bolder;
       }
       ._btn {
-        width: 200px;
+        width: 300px;
         height: 64px;
         background: #2e44ff;
         box-shadow: 0px 2px 24px 0px rgba(46, 68, 255, 0.43);
